@@ -1,17 +1,17 @@
-import { StatisticInfo } from './StatisticInfo/StatisticInfo'
+import PropTypes from 'prop-types';
+// import { StatisticInfo } from './StatisticInfo/StatisticInfo'
 
-export const Statistics = ({
-    message,
-    Obj,
-    total,
-    positivePercentage,
-    state,
-}) => {
-    return <StatisticInfo
-                Obj={Obj}
-                total={total}
-                positivePercentage={positivePercentage}
-                state={state}
-                message={message} />
+
+
+export const Statistics = ({ title, children }) => {
+    return (
+        <section>
+        { children }
+        </section >
+    )
 };
 
+Statistics.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired,
+}
